@@ -2,6 +2,13 @@ const video = document.querySelector("video")
 const selector = document.querySelector("select")
 const box = document.querySelector(".box")
 
+try {
+    new BarcodeDetector({})
+} catch (error) {
+    alert("The Barcode Detection API is unavailable! Check the README for more!")
+    console.error(error)
+}
+
 const barcodeDetector = new BarcodeDetector({});
 
 var currentToken = undefined
