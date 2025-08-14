@@ -11,6 +11,11 @@ This app is simple and easy to use, here's how:
 6. Export as either a CSV or JSON
 
 ## Setup
+> **NOTICE**
+>
+> This app uses the **EXPERIMENTAL** [Barcode Detection API](https://developer.mozilla.org/en-US/docs/Web/API/Barcode_Detection_API).
+> Ensure the correct Feature Flags are enabled in your browser.
+
 ### Camera Access
 This app requires your camera, there's no manual entry feature.
 To save time, make sure you have a camera connected before you enter your token.
