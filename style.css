@@ -191,6 +191,7 @@ video {
 .overlay input[type='submit'] {
     border: 1px solid green;
     background-color: #b1ffb1;
+    color: darkgreen;
 
     cursor: pointer;
 
