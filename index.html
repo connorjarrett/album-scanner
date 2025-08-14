@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"></script>
+    <title>Album Scanner</title>
+</head>
+
+<body>
+    <!--
+    <div class="overlay">
+        <article>
+            <h2>Does the album match?</h2>
+            <h3>Aurora (16) - A Different Kind Of Human (Step 2)</h3>
+            <img
+                src="https://i.discogs.com/f0ON7mrFhW4FlSrWSHrG0UHpE3MmDqiefgIb4pNlXbY/rs:fit/g:sm/q:90/h:595/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI4NDQ0/NzIzLTE2OTYwMTM2/NjctNDczMi5qcGVn.jpeg">
+
+            <div class="selector">
+                <button class="green">Yes</button>
+                <button class="red">No</button>
+            </div>
+        </article>
+    </div>
+    -->
+
+    <div class="overlay" id="auth">
+        <article>
+            <img class="logo" alt="Discogs Logo" src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Discogs_logo_black.svg">
+
+            <h2>Sign in with Discogs</h2>
+            <p>You'll need a Discogs account & token to use this app.<br>Don't worry &mdash; it's free!</p>
+
+            <span>Here's how:</span>
+            <ol>
+                <li>Head to <a href="https://www.discogs.com/settings/developers" target="_blank">Account &rarr; Developers</a></li>
+                <li>Click <strong>Generate token</strong></li>
+                <li>Copy the token, and enter it below</li>
+            </ol>
+
+            <form>
+                <input type="text" id="token" placeholder="Enter token here">
+                <input type="submit" value="Go">
+            </form>
+
+            <p>Make sure you also have a camera connected!</p>
+
+            <hr>
+
+            <p><sub>Your token is only ever sent to the Discogs API</sub></p>
+        </article>
+    </div>
+
+    <div class="catalogue hidden" data-sort="added">
+        <article>
+            <div class="row">
+                <h2>My Catalogue</h2>
+
+                <div>
+                    <button onclick="downloadCatalogueAs('csv')">Download CSV</button>
+                    <button onclick="downloadCatalogueAs('json')">Download JSON</button>
+                    <button onclick="closeCatalogue()">&cross;</button>
+                </div>
+            </div>
+            <div class="row no-sort">
+                <button onclick="setSortType('added')">Recently Added</button>
+                <button onclick="setSortType('value')">Value</button>
+                <button onclick="setSortType('artist')">Artist</button>
+                <button onclick="setSortType('year')">Year</button>
+            </div>
+            <ul>
+                <li>
+                    <h4>Scan your first album!</h4>
+                </li>
+
+            </ul>
+        </article>
+    </div>
+
+    <main>
+        <div class="row">
+            <select>
+                <option value="" disabled selected>Select a camera</option>
+            </select>
+            <button onclick="openCatalogue()">My Catalogue</button>
+        </div>
+
+        <div class="container">
+            <video></video>
+            <span class="box"></span>
+        </div>
+
+        <a href="https://github.com/connorjarrett" target="_blank">github.com/connorjarrett</a>
+    </main>
+</body>
+
+<script src="script.js"></script>
+
+</html>

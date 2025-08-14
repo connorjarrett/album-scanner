@@ -1,0 +1,292 @@
+:root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1;
+    /* fix for Chrome */
+}
+
+@supports (font-variation-settings: normal) {
+    :root {
+        font-family: InterVariable, sans-serif;
+    }
+}
+
+body {
+    width: 100svw;
+    height: 100svh;
+    margin: 0;
+}
+
+main {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+
+    padding: 50px;
+    box-sizing: border-box;
+
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.row button {
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    background-color: transparent;
+    cursor: pointer;
+
+    padding: 10px;
+}
+
+select {
+    appearance: none;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.container {
+    /* position: relative; */
+    margin-top: auto;
+    margin-bottom: auto;
+
+    height: 100%;
+    max-width: 100%;
+    aspect-ratio: 4/3;
+}
+
+video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    border-radius: 5px;
+    outline: 1px solid lightgrey;
+}
+
+.box {
+    position: fixed;
+    display: block;
+    background-color: rgba(0, 179, 255, 0.283);
+    border: 1px solid lightblue;
+
+    transition: all 500ms;
+}
+
+.overlay,
+.catalogue {
+    position: fixed;
+    top: 0;
+    width: 100svw;
+    height: 100svh;
+
+    z-index: 100;
+
+    background-color: white;
+    display: grid;
+    place-items: center;
+}
+
+.overlay article,
+.catalogue article {
+    /* background-color: #f6f6f6; */
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    width: 100%;
+    max-width: 600px;
+
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: #393939;
+}
+
+.overlay img:not(.logo) {
+    border-radius: 5px;
+    width: 50%;
+
+    min-width: 300px;
+    margin: 20px 0;
+
+    background-color: #f6f6f6;
+    outline: 1px solid #c4baba;
+}
+
+.overlay img.logo {
+    width: 40%;
+    min-width: 200px;
+}
+
+.overlay p {
+    text-align: center;
+}
+
+.overlay h2 {
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.overlay h3 {
+    margin: 10px 0;
+    font-weight: 500;
+
+    max-width: 95%;
+    text-align: center;
+}
+
+.overlay .selector {
+    display: grid;
+    gap: 5px;
+
+    width: 50%;
+    min-width: 300px;
+}
+
+.overlay button {
+    appearance: none;
+    border: 1px solid black;
+    background-color: white;
+
+    border-radius: 5px;
+
+    padding: 10px 15px;
+
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.overlay button.green {
+    background-color: #b1ffb1;
+    border-color: green;
+}
+
+.overlay button.red {
+    background-color: #ffb6b6;
+    border-color: red;
+}
+
+.overlay input {
+    padding: 10px 20px;
+
+    border: 1px solid #c4baba;
+    background-color: #f6f6f6;
+
+    border-radius: 5px;
+}
+
+.overlay input[type='submit'] {
+    border: 1px solid green;
+    background-color: #b1ffb1;
+
+    cursor: pointer;
+
+    border-radius: 5px;
+}
+
+.overlay hr {
+    width: 50%;
+    border: none;
+    height: 1px;
+
+    background-color: #c4baba;
+
+    margin: 20px 0 -5px 0;
+}
+
+.catalogue {
+    display: grid;
+    height: 100svh;
+    grid-template-rows: auto 1fr;
+
+    z-index: 90;
+}
+
+.catalogue.hidden {
+    display: none;
+}
+
+.catalogue article {
+    height: 100svh;
+}
+
+.catalogue h2 {
+    margin: 30px 0;
+}
+
+.catalogue ul {
+    list-style-type: none;
+    overflow-y: auto;
+    padding: 0 10px;
+    box-sizing: content-box;
+
+    width: 100%;
+    height: 100%;
+}
+
+.catalogue li {
+    margin: 10px 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 20px;
+    box-sizing: border-box;
+    /* background-color: red; */
+}
+
+.catalogue img {
+    width: 8em;
+    border-radius: 10px;
+}
+
+.catalogue li div {
+    display: flex;
+    flex-direction: column;
+}
+
+.catalogue li h3 {
+    margin: 5px 0;
+}
+
+.catalogue li h4 {
+    margin: 5px 0;
+    font-weight: 400;
+}
+
+a {
+    color: #3383fa;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+main>a {
+    font-size: 14px;
+}
+
+.catalogue .row {
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.catalogue .row.no-sort {
+    justify-content: flex-start;
+}
