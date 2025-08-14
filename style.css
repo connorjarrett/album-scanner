@@ -70,6 +70,7 @@ video {
 
     border-radius: 5px;
     outline: 1px solid lightgrey;
+    background-color: #f0f0f0;
 }
 
 .box {
